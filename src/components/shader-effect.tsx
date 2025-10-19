@@ -203,9 +203,9 @@ void main() {
 
   vec4 backgroundColor = vec4(0.0, 0.0, 0.0, 0.0);
 
-  // Purple dots for light mode (matching DotNut brand), light dots for dark mode
-  vec4 lightModeColor = vec4(0.498, 0.220, 0.788, 1.0);  // Purple #7F38C9
-  vec4 darkModeColor = vec4(0.84, 0.95, 1.0, 1.0);
+  // Minimal white/gray dots for both light and dark mode
+  vec4 lightModeColor = vec4(0.2, 0.2, 0.2, 1.0);  // Dark gray for light mode
+  vec4 darkModeColor = vec4(1.0, 1.0, 1.0, 1.0);    // White for dark mode
   vec4 dotColor = mix(lightModeColor, darkModeColor, u_darkMode);
 
   vec4 finalColor = vec4(dotColor.rgb * circle, circle);

@@ -18,25 +18,25 @@ export default function DotNutDocs() {
   return (
       <div className="min-h-screen bg-black">
         {/* Header */}
-        <header className="border-b border-white/10 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+        <header className="border-b border-white/10 bg-black/90 backdrop-blur-sm sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <span className="font-mono font-bold text-2xl text-white">
-            Dot<span className="text-[#7F38C9]">Nut</span>
+          <span className="font-mono font-bold text-2xl text-white tracking-tight">
+            DotNut
           </span>
-            <nav className="flex items-center gap-6">
-              <a href="#docs" className="text-sm text-gray-400 hover:text-white transition-colors">
+            <nav className="flex items-center gap-8">
+              <a href="#docs" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">
                 Docs
               </a>
-              <a href="#examples" className="text-sm text-gray-400 hover:text-white transition-colors">
+              <a href="#examples" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">
                 Examples
               </a>
-              <a href="#api" className="text-sm text-gray-400 hover:text-white transition-colors">
+              <a href="#api" className="text-sm font-medium text-gray-400 hover:text-white transition-colors">
                 API
               </a>
-              <Button variant="ghost" size="sm" className="text-gray-300 hover:text-white hover:bg-white/10">
-                <Github className="w-4 h-4 mr-2" />
+              <a href="#github" className="text-sm font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                <Github className="w-4 h-4" />
                 GitHub
-              </Button>
+              </a>
             </nav>
           </div>
         </header>
@@ -48,13 +48,13 @@ export default function DotNutDocs() {
             <div className="flex-1 max-w-2xl">
               <div className="space-y-4">
                 <div className="inline-block animate-fade-in-up" style={{ animationDelay: '0.05s' }}>
-                  <div className="text-xs font-mono text-gray-400 bg-[#7F38C9]/10 px-3 py-1.5 rounded-full border border-[#7F38C9]/30">
+                  <div className="text-xs font-mono text-gray-500 bg-white/5 px-3 py-1 border border-white/10">
                     Cashu protocol • .NET 8
                   </div>
                 </div>
 
                 <h1 className="animate-fade-in-up text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white font-mono" style={{ animationDelay: '0.1s' }}>
-                  .N<span className="text-[#7F38C9]">u</span>t
+                  DotNut
                 </h1>
 
                 <p className="animate-fade-in-up text-xl md:text-2xl text-gray-300 leading-snug" style={{ animationDelay: '0.2s' }}>
@@ -68,11 +68,11 @@ export default function DotNutDocs() {
               </div>
 
               {/* Installation */}
-              <Card className="animate-fade-in-up mt-6 p-3 md:p-4 bg-white/5 border-white/20 backdrop-blur-sm" style={{ animationDelay: '0.3s' }}>
+              <Card className="animate-fade-in-up mt-6 p-4 bg-white/5 border border-white/10" style={{ animationDelay: '0.3s' }}>
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
                   <div className="flex items-center gap-3 flex-1 min-w-0 w-full">
-                    <Package className="w-5 h-5 text-amber-600 shrink-0" />
-                    <code className="text-xs sm:text-sm font-mono bg-white/10 text-gray-200 px-3 py-1.5 rounded flex-1 truncate">
+                    <Package className="w-5 h-5 text-gray-400 shrink-0" />
+                    <code className="text-xs sm:text-sm font-mono bg-black/50 text-gray-200 px-3 py-1.5 border border-white/10 flex-1 truncate">
                       dotnet add package DotNut
                     </code>
                   </div>
@@ -80,31 +80,20 @@ export default function DotNutDocs() {
                       variant="ghost"
                       size="icon"
                       onClick={copyToClipboard}
-                      className="shrink-0 self-end sm:self-auto text-gray-300 hover:text-white hover:bg-white/10"
+                      className="shrink-0 self-end sm:self-auto text-gray-400 hover:text-white hover:bg-white/10 border border-white/10"
                   >
-                    {copied ? <Check className="w-4 h-4 text-amber-600" /> : <Copy className="w-4 h-4" />}
+                    {copied ? <Check className="w-4 h-4 text-white" /> : <Copy className="w-4 h-4" />}
                   </Button>
                 </div>
               </Card>
 
               <div className="animate-fade-in-up flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-6" style={{ animationDelay: '0.35s' }}>
-                <Button 
-                  size="lg" 
-                  className="group relative overflow-hidden font-semibold bg-white text-black hover:bg-white/90 w-full sm:w-auto transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/20"
-                >
-                  <span className="relative z-10">Get Started</span>
-                  <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-[#7F38C9] to-purple-500 transition-transform duration-300 group-hover:translate-x-0" />
-                  <span className="absolute inset-0 z-10 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-white font-semibold">
-                    Get Started
-                  </span>
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="w-full sm:w-auto border-2 border-white/20 bg-white/5 text-white hover:border-white/40 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-white/10"
-                >
+                <button className="px-6 py-3 bg-white text-black font-medium text-sm border border-white hover:bg-gray-100 transition-colors duration-150 w-full sm:w-auto">
+                  Get Started
+                </button>
+                <button className="px-6 py-3 bg-transparent text-white font-medium text-sm border border-white/20 hover:border-white hover:bg-white/5 transition-colors duration-150 w-full sm:w-auto">
                   View on NuGet
-                </Button>
+                </button>
               </div>
             </div>
 
@@ -116,7 +105,7 @@ export default function DotNutDocs() {
                   darkMode={true}
                   width={400}
                   height={550}
-                  className="rounded-lg"
+                  className="border border-white/10"
                 />
                 <p className="text-center text-xs text-gray-500 mt-8 font-mono italic">
                   "It's literally just a nut" - Anonymous .NET Developer
@@ -145,9 +134,9 @@ export default function DotNutDocs() {
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              <Card className="p-4 bg-white/5 border-white/20 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-[#7F38C9]/10 flex items-center justify-center mb-4 border border-[#7F38C9]/20">
-                  <Lock className="w-6 h-6 text-[#7F38C9]" />
+              <Card className="p-6 bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors duration-150">
+                <div className="w-12 h-12 bg-white/10 flex items-center justify-center mb-4 border border-white/20">
+                  <Lock className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Privacy First</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -155,9 +144,9 @@ export default function DotNutDocs() {
                 </p>
               </Card>
 
-              <Card className="p-4 bg-white/5 border-white/20 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-amber-600/10 flex items-center justify-center mb-4 border border-amber-600/20">
-                  <Bitcoin className="w-6 h-6 text-amber-600" />
+              <Card className="p-6 bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors duration-150">
+                <div className="w-12 h-12 bg-white/10 flex items-center justify-center mb-4 border border-white/20">
+                  <Bitcoin className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Bitcoin-Backed</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -165,9 +154,9 @@ export default function DotNutDocs() {
                 </p>
               </Card>
 
-              <Card className="p-4 bg-white/5 border-white/20 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-[#7F38C9]/10 flex items-center justify-center mb-4 border border-[#7F38C9]/20">
-                  <Zap className="w-6 h-6 text-[#7F38C9]" />
+              <Card className="p-6 bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors duration-150">
+                <div className="w-12 h-12 bg-white/10 flex items-center justify-center mb-4 border border-white/20">
+                  <Zap className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Instant Payments</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -175,9 +164,9 @@ export default function DotNutDocs() {
                 </p>
               </Card>
 
-              <Card className="p-4 bg-white/5 border-white/20 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-amber-600/10 flex items-center justify-center mb-4 border border-amber-600/20">
-                  <Shield className="w-6 h-6 text-amber-600" />
+              <Card className="p-6 bg-white/5 border border-white/10 hover:bg-white/[0.07] transition-colors duration-150">
+                <div className="w-12 h-12 bg-white/10 flex items-center justify-center mb-4 border border-white/20">
+                  <Shield className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-white">Open Protocol</h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
@@ -196,7 +185,7 @@ export default function DotNutDocs() {
               <p className="text-gray-400 text-sm md:text-base">Start building with ecash in minutes</p>
             </div>
 
-            <Card className="p-4 md:p-6 bg-white/5 border-white/20 backdrop-blur-sm">
+            <Card className="p-6 bg-white/5 border border-white/10">
             <pre className="text-xs sm:text-sm font-mono overflow-x-auto">
               <code className="text-gray-200">
                 {`// Initialize wallet with mint URL
@@ -231,7 +220,7 @@ await wallet.MeltAsync(invoice);`}
         {/* What is Cashu */}
         <section className="container mx-auto px-4 py-12 md:py-16 bg-black">
           <div className="max-w-4xl mx-auto">
-            <Card className="p-6 sm:p-8 md:p-12 bg-gradient-to-br from-white/10 to-white/5 border-white/20 backdrop-blur-sm">
+            <Card className="p-6 sm:p-8 md:p-12 bg-white/5 border border-white/10">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-white">What is Cashu?</h3>
               <div className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-400 leading-relaxed">
                 <p>
