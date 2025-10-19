@@ -105,7 +105,7 @@ export default function DotNutDocs() {
                   darkMode={true}
                   width={400}
                   height={550}
-                  className="border border-white/10"
+                  className=""
                 />
                 <p className="text-center text-xs text-gray-500 mt-8 font-mono italic">
                   "It's literally just a nut" - Anonymous .NET Developer
@@ -126,7 +126,7 @@ export default function DotNutDocs() {
         </section>
 
         {/* Features Grid */}
-        <section className="container mx-auto px-4 py-12 md:py-16 lg:py-24 bg-black">
+        <section className="container mx-auto px-4 py-12 md:py-16 lg:py-24">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-white">Why DotNut?</h2>
@@ -178,7 +178,7 @@ export default function DotNutDocs() {
         </section>
 
         {/* Code Example */}
-        <section className="container mx-auto px-4 py-12 md:py-16 bg-black">
+        <section className="container mx-auto px-4 py-12 md:py-16">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-6 md:mb-8">
               <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-white">Quick Example</h3>
@@ -218,7 +218,7 @@ await wallet.MeltAsync(invoice);`}
         </section>
 
         {/* What is Cashu */}
-        <section className="container mx-auto px-4 py-12 md:py-16 bg-black">
+        <section className="container mx-auto px-4 py-12 md:py-16">
           <div className="max-w-4xl mx-auto">
             <Card className="p-6 sm:p-8 md:p-12 bg-white/5 border border-white/10">
               <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-white">What is Cashu?</h3>
@@ -241,7 +241,7 @@ await wallet.MeltAsync(invoice);`}
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-white/10 mt-16 md:mt-24 bg-black">
+        <footer className="border-t border-white/10 mt-16 md:mt-24">
           <div className="container mx-auto px-4 py-8 md:py-12">
             <div className="max-w-6xl mx-auto">
               <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 text-xs sm:text-sm text-gray-400">

@@ -204,8 +204,8 @@ void main() {
   vec4 backgroundColor = vec4(0.0, 0.0, 0.0, 0.0);
 
   // Minimal white/gray dots for both light and dark mode
-  vec4 lightModeColor = vec4(0.2, 0.2, 0.2, 1.0);  // Dark gray for light mode
-  vec4 darkModeColor = vec4(1.0, 1.0, 1.0, 1.0);    // White for dark mode
+  vec4 lightModeColor = vec4(0.15, 0.15, 0.15, 1.0);  // Dark gray for light backgrounds
+  vec4 darkModeColor = vec4(0.95, 0.95, 0.95, 1.0);    // Slightly off-white for dark backgrounds
   vec4 dotColor = mix(lightModeColor, darkModeColor, u_darkMode);
 
   vec4 finalColor = vec4(dotColor.rgb * circle, circle);
@@ -263,7 +263,6 @@ function loadTexture(gl: WebGLRenderingContext, url: string): WebGLTexture | nul
 
   const image = new Image()
   image.onload = () => {
-    console.log("✅ Image loaded successfully:", url)
     gl.bindTexture(gl.TEXTURE_2D, texture)
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image)
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE)
@@ -273,7 +272,7 @@ function loadTexture(gl: WebGLRenderingContext, url: string): WebGLTexture | nul
   }
 
   image.onerror = () => {
-    console.error("❌ Failed to load image:", url)
+    console.error("Failed to load image:", url)
   }
 
   image.src = url
@@ -298,13 +297,8 @@ export default function ShaderEffect({
   const lastTimeRef = useRef(performance.now())
 
   useEffect(() => {
-    console.log("🎨 ShaderEffect mounting with image:", imageSrc)
     const canvas = canvasRef.current
-    if (!canvas) {
-      console.error("❌ Canvas ref is null")
-      return
-    }
-    console.log("✅ Canvas found, dimensions:", width, "x", height)
+    if (!canvas) return
 
     // Set up canvas with device pixel ratio for crisp rendering
     const dpr = Math.min(window.devicePixelRatio || 1, 2)
@@ -314,10 +308,9 @@ export default function ShaderEffect({
     // Initialize WebGL context
     const gl = canvas.getContext("webgl")
     if (!gl) {
-      console.error("❌ WebGL not supported in this browser")
+      console.error("WebGL not supported")
       return
     }
-    console.log("✅ WebGL context created successfully")
 
     gl.clearColor(0, 0, 0, 0)
 
@@ -384,7 +377,6 @@ export default function ShaderEffect({
 
     // Load the image texture
     const texture = loadTexture(gl, imageSrc)
-    console.log("🖼️  Loading texture from:", imageSrc)
 
     // Mouse event handlers
     const handleMouseMove = (e: MouseEvent) => {
