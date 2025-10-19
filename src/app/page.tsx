@@ -114,15 +114,6 @@ export default function DotNutDocs() {
             </div>
           </div>
 
-          {/* Scroll Indicator */}
-          <div className="animate-bounce-slow absolute bottom-8 left-1/2 -translate-x-1/2 z-10" style={{ animationDelay: '0.6s' }}>
-            <div className="flex flex-col items-center gap-2 text-white/60">
-              <span className="text-sm font-medium">Scroll to explore</span>
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
-          </div>
         </section>
 
         {/* Features Grid */}
@@ -177,18 +168,19 @@ export default function DotNutDocs() {
           </div>
         </section>
 
-        {/* Code Example */}
+        {/* Code Example & What is Cashu - Side by Side */}
         <section className="container mx-auto px-4 py-12 md:py-16">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-6 md:mb-8">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-white">Quick Example</h3>
-              <p className="text-gray-400 text-sm md:text-base">Start building with ecash in minutes</p>
-            </div>
-
-            <Card className="p-6 bg-white/5 border border-white/10">
-            <pre className="text-xs sm:text-sm font-mono overflow-x-auto">
-              <code className="text-gray-200">
-                {`// Initialize wallet with mint URL
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* Code Example */}
+              <div>
+                <Card className="p-6 bg-white/5 border border-white/10 h-full">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 text-white">Quick Example</h3>
+                  <p className="text-gray-400 text-sm mb-6">Start building with ecash in minutes</p>
+                  
+                  <pre className="text-xs sm:text-sm font-mono overflow-x-auto mb-6">
+                    <code className="text-gray-200">
+                      {`// Initialize wallet with mint URL
 var wallet = new Wallet
         .Create()
         .WithMint("https://mint.example.com");
@@ -205,38 +197,32 @@ await wallet.Swap(encodedToken);
 
 // Redeem for Bitcoin via Lightning
 await wallet.MeltAsync(invoice);`}
-              </code>
-            </pre>
-            </Card>
-
-            <div className="mt-6 md:mt-8 text-center px-4">
-              <p className="text-xs sm:text-sm text-gray-500 italic">
-                "Finally, ecash that doesn't require a PhD in cryptography" - Satoshi's Ghost, probably
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* What is Cashu */}
-        <section className="container mx-auto px-4 py-12 md:py-16">
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-6 sm:p-8 md:p-12 bg-white/5 border border-white/10">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-white">What is Cashu?</h3>
-              <div className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-400 leading-relaxed">
-                <p>
-                  Cashu is a free and open-source Chaumian ecash protocol built for Bitcoin. It enables digital bearer
-                  tokens stored on users' devices - like physical cash, but digital.
-                </p>
-                <p>
-                  The protocol uses blind signatures to preserve user privacy. Mints cannot track who owns which tokens or
-                  how they're spent. Transactions are instant, nearly free, and completely peer-to-peer.
-                </p>
-                <p className="text-white font-medium pt-2">
-                  DotNut brings this powerful protocol to the .NET ecosystem, making it easy to build wallets, payment
-                  systems, and ecash applications in C#. Because even Bitcoin developers deserve good tooling.
-                </p>
+                    </code>
+                  </pre>
+                </Card>
               </div>
-            </Card>
+
+              {/* What is Cashu */}
+              <div>
+                <Card className="p-6 sm:p-8 bg-white/5 border border-white/10 h-full">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white">What is Cashu?</h3>
+                  <div className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-400 leading-relaxed">
+                    <p>
+                      Cashu is a free and open-source Chaumian ecash protocol built for Bitcoin. It enables digital bearer
+                      tokens stored on users' devices - like physical cash, but digital.
+                    </p>
+                    <p>
+                      The protocol uses blind signatures to preserve user privacy. Mints cannot track who owns which tokens or
+                      how they're spent. Transactions are instant, nearly free, and completely peer-to-peer.
+                    </p>
+                    <p className="text-white font-medium pt-2">
+                      DotNut brings this powerful protocol to the .NET ecosystem, making it easy to build wallets, payment
+                      systems, and ecash applications in C#. Because even Bitcoin developers deserve good tooling.
+                    </p>
+                  </div>
+                </Card>
+              </div>
+            </div>
           </div>
         </section>
 
