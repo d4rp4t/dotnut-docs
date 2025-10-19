@@ -172,6 +172,27 @@ export default function DotNutDocs() {
         <section className="container mx-auto px-4 py-12 md:py-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+              {/* What is Cashu */}
+              <div>
+                <Card className="p-6 sm:p-8 bg-white/5 border border-white/10 h-full">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white">What is Cashu?</h3>
+                  <div className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-400 leading-relaxed">
+                    <p>
+                      Cashu is a free and open-source Chaumian ecash protocol built for Bitcoin. It enables digital bearer
+                      tokens stored on users' devices - like physical cash, but digital.
+                    </p>
+                    <p>
+                      The protocol uses blind signatures to preserve user privacy. Mints cannot track who owns which tokens or
+                      how they're spent. Transactions are instant, nearly free, and completely peer-to-peer.
+                    </p>
+                    <p className="text-white font-medium pt-2">
+                      DotNut brings this powerful protocol to the .NET ecosystem, making it easy to build wallets, payment
+                      systems, and ecash applications in C#. Because even Bitcoin developers deserve good tooling.
+                    </p>
+                  </div>
+                </Card>
+              </div>
+
               {/* Code Example */}
               <div>
                 <Card className="p-6 bg-white/5 border border-white/10 h-full">
@@ -199,27 +220,6 @@ await wallet.Swap(encodedToken);
 await wallet.MeltAsync(invoice);`}
                     </code>
                   </pre>
-                </Card>
-              </div>
-
-              {/* What is Cashu */}
-              <div>
-                <Card className="p-6 sm:p-8 bg-white/5 border border-white/10 h-full">
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4 text-white">What is Cashu?</h3>
-                  <div className="space-y-3 md:space-y-4 text-sm md:text-base text-gray-400 leading-relaxed">
-                    <p>
-                      Cashu is a free and open-source Chaumian ecash protocol built for Bitcoin. It enables digital bearer
-                      tokens stored on users' devices - like physical cash, but digital.
-                    </p>
-                    <p>
-                      The protocol uses blind signatures to preserve user privacy. Mints cannot track who owns which tokens or
-                      how they're spent. Transactions are instant, nearly free, and completely peer-to-peer.
-                    </p>
-                    <p className="text-white font-medium pt-2">
-                      DotNut brings this powerful protocol to the .NET ecosystem, making it easy to build wallets, payment
-                      systems, and ecash applications in C#. Because even Bitcoin developers deserve good tooling.
-                    </p>
-                  </div>
                 </Card>
               </div>
             </div>
